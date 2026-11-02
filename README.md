@@ -133,7 +133,7 @@ python app.py
 Puis ouvrir l'adresse affichée (`http://127.0.0.1:7860`).
 
 `app.py`, c'est juste une petite interface simple (avec Gradio) pour pouvoir essayer le générateur sans ouvrir le notebook. Ce n'est pas le but du projet : le vrai travail est dans `excuses.ipynb` et `transformer_model.py`.
-Le curseur « niveau de mauvaise foi », c'est la température.
+La température est fixée à 0,7 : assez bas pour éviter la plupart des fautes.
 
 ## Les limites
 

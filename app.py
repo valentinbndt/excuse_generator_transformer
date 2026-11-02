@@ -28,20 +28,16 @@ def excuse(debut="", temperature=0.8, top_k=50, max_new_tokens=80):
     return enc.decode(idx[0, 1:].tolist())
 
 
-def generer(debut, mauvaise_foi):
-    return excuse(debut, temperature=mauvaise_foi)
+def generer(debut):
+    return excuse(debut, temperature=0.7)
 
 
 demo = gr.Interface(
     fn=generer,
-    inputs=[
-        gr.Textbox(label="Début de l'excuse (facultatif)", placeholder="Je suis en retard parce que"),
-        gr.Slider(0.3, 1.5, value=0.8, step=0.1, label="Niveau de mauvaise foi"),
-    ],
+    inputs=gr.Textbox(label="Début de l'excuse (facultatif)", placeholder="Je suis en retard parce que"),
     outputs=gr.Textbox(label="Ton excuse"),
     title="Le Générateur d'Excuses Bidons",
     description="Un petit GPT entraîné de zéro sur 10 000 excuses absurdes. Aucune garantie que ton prof y croie.",
-    examples=[["Je suis en retard", 0.8], ["Je n'ai pas fait mes devoirs parce que", 1.0], ["", 1.3]],
     flagging_mode="never",
 )
 
