@@ -15,13 +15,20 @@ Quelques excuses écrites par le modèle :
 
 ## L'idée
 
-En cours, on a vu comment marche un Transformer et comment GPT génère du texte token par token.
-Je voulais refaire un GPT moi-même, en partant d'une feuille blanche, mais sur un sujet un peu drôle.
-Je me suis inspiré de la vidéo d'Andrej Karpathy
-[« Let's build GPT: from scratch, in code, spelled out »](https://www.youtube.com/watch?v=kCc8FmEb1nY)
-et j'ai suivi le même chemin : partir d'un modèle tout simple et ajouter les briques une par une.
+C'est un projet pour mon cours de deep learning. La consigne : faire un **générateur de texte**.
+J'ai choisi de faire un générateur d'excuses absurdes, pour que ce soit un peu drôle à tester.
 
-La différence avec la vidéo : lui découpe le texte lettre par lettre, moi j'ai utilisé le tokenizer de GPT-2 (`tiktoken`), donc mes tokens sont des bouts de mots.
+Je me suis surtout appuyé sur ce qu'on a fait en classe, dans l'ordre du cours :
+transformer le texte en nombres, le bigramme, les embeddings, le RNN, la self-attention,
+puis le Transformer (un GPT qui écrit du Shakespeare), la génération (température, top-k)
+et la tokenisation BPE. 
+
+J'ai repris le même chemin que le cours : partir d'un modèle tout simple et ajouter les briques une par une.
+J'ai aussi regardé la vidéo d'Andrej Karpathy
+[« Let's build GPT »](https://www.youtube.com/watch?v=kCc8FmEb1nY) pour la façon d'organiser le code.
+
+La différence avec le GPT du cours : en classe, le texte était découpé lettre par lettre.
+Moi j'ai utilisé le tokenizer de GPT-2 (`tiktoken`, vu dans la partie BPE du cours), donc mes tokens sont des bouts de mots.
 
 ## Comment j'ai fait, de A à Z
 
